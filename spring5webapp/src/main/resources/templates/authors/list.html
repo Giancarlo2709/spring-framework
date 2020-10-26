@@ -14,9 +14,9 @@
         <th>LastName</th>
     </tr>
     <tr th:each="author : ${authors}">
-        <td th:text = "${author.id}">123</td>
-        <td th:text = "${author.firstName}">Giancarlo</td>
-        <td th:text = "${author.lastName}">Yarleque</td>
+        <td th:text="${author.id}">123</td>
+        <td th:text="${author.firstName}">Giancarlo</td>
+        <td th:text="${author.lastName}">Yarleque</td>
     </tr>
 </table>
 
