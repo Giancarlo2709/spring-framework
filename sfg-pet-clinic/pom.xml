@@ -45,7 +45,7 @@
 
     <scm>
         <developerConnection>scm:git:git@github.com:Giancarlo2709/spring-framework.git</developerConnection>
-        <tag>sfg-pet-clinic-0</tag>
+        <tag>HEAD</tag>
     </scm>
 
 </project>
