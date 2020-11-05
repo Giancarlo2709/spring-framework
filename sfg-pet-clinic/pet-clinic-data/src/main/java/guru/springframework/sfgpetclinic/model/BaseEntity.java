@@ -1,11 +1,14 @@
 package guru.springframework.sfgpetclinic.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Created By Giancarlo on 11/3/2020
  */
-public class BaseEntity {
+public class BaseEntity implements Serializable {
+
+  private static final long serialVersionUID = -3046570655979223733L;
 
   private Long id;
 
