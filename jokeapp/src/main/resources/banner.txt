@@ -1,0 +1,29 @@
+${AnsiColor.MAGENTA}
+
+
+        GGGGGGGGGGGGG                                      kkkkkkkk                                 444444444   jjjj
+     GGG::::::::::::G                                      k::::::k                                4::::::::4  j::::j
+   GG:::::::::::::::G                                      k::::::k                               4:::::::::4   jjjj
+  G:::::GGGGGGGG::::G                                      k::::::k                              4::::44::::4
+ G:::::G       GGGGGG    eeeeeeeeeeee       eeeeeeeeeeee    k:::::k    kkkkkkk  ssssssssss      4::::4 4::::4 jjjjjjj
+G:::::G                ee::::::::::::ee   ee::::::::::::ee  k:::::k   k:::::k ss::::::::::s    4::::4  4::::4 j:::::j
+G:::::G               e::::::eeeee:::::eee::::::eeeee:::::eek:::::k  k:::::kss:::::::::::::s  4::::4   4::::4  j::::j
+G:::::G    GGGGGGGGGGe::::::e     e:::::e::::::e     e:::::ek:::::k k:::::k s::::::ssss:::::s4::::444444::::444j::::j
+G:::::G    G::::::::Ge:::::::eeeee::::::e:::::::eeeee::::::ek::::::k:::::k   s:::::s  ssssss 4::::::::::::::::4j::::j
+G:::::G    GGGGG::::Ge:::::::::::::::::ee:::::::::::::::::e k:::::::::::k      s::::::s      4444444444:::::444j::::j
+G:::::G        G::::Ge::::::eeeeeeeeeee e::::::eeeeeeeeeee  k:::::::::::k         s::::::s             4::::4  j::::j
+ G:::::G       G::::Ge:::::::e          e:::::::e           k::::::k:::::k  ssssss   s:::::s           4::::4  j::::j
+  G:::::GGGGGGGG::::Ge::::::::e         e::::::::e         k::::::k k:::::k s:::::ssss::::::s          4::::4  j::::j
+   GG:::::::::::::::G e::::::::eeeeeeee  e::::::::eeeeeeee k::::::k  k:::::ks::::::::::::::s         44::::::44j::::j
+     GGG::::::GGG:::G  ee:::::::::::::e   ee:::::::::::::e k::::::k   k:::::ks:::::::::::ss          4::::::::4j::::j
+        GGGGGG   GGGG    eeeeeeeeeeeeee     eeeeeeeeeeeeee kkkkkkkk    kkkkkkksssssssssss            4444444444j::::j
+                                                                                                               j::::j
+                                                                                                     jjjj      j::::j
+                                                                                                    j::::jj   j:::::j
+                                                                                                    j::::::jjj::::::j
+                                                                                                     jj::::::::::::j
+                                                                                                       jjj::::::jjj
+                                                                                                          jjjjjj
+
+${AnsiColor.BRIGHT_CYAN} :: ${spring.application.title} ::         (v${spring.application.version})
+${AnsiColor.DEFAULT}
