@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 /**
  * Created By Giancarlo on 10/29/2020
  */
-@Profile("EN")
+@Profile("en")
 @Service("i18nService")
 public class I18nEnglishGreetingService implements GreetingService {
   @Override

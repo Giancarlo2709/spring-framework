@@ -1,0 +1,12 @@
+guru:
+  jms:
+    username: JMS Username
+    password: SomePass
+    url: SomeUrl
+
+---
+spring:
+  profiles: en
+guru:
+  jms:
+    username: JMS Username $$$ Giancarlo
