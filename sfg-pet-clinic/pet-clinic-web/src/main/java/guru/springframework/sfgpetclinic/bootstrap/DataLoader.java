@@ -16,6 +16,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 
 /**
  * @author Giancarlo
@@ -75,6 +76,7 @@ public class DataLoader implements CommandLineRunner {
             .address("123 Brickerel")
             .city("Miami")
             .telephone("1231231231234")
+            .pets(new HashSet<>())
             .build();
 
     Pet mikesPet = new Pet();
@@ -93,6 +95,7 @@ public class DataLoader implements CommandLineRunner {
             .address("Santa Anita 167")
             .city("Lima")
             .telephone("99876542")
+            .pets(new HashSet<>())
             .build();
 
     Pet wishCat = new Pet();
