@@ -18,6 +18,7 @@ import javax.persistence.OneToOne;
  * @author Giancarlo
  */
 @Data
+@EqualsAndHashCode(exclude = {"recipe"})
 @Entity
 public class Notes {
 
