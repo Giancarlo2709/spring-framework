@@ -1,10 +1,8 @@
 package guru.springframework.spring5recipeapp.domain;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +15,8 @@ import javax.persistence.OneToOne;
  * Class <b>Notes</b>.
  * @author Giancarlo
  */
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(exclude = {"recipe"})
 @Entity
 public class Notes {

@@ -1,6 +1,7 @@
 package guru.springframework.spring5recipeapp.domain;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -22,7 +23,8 @@ import java.util.Set;
  * Class <b>Recipe</b>.
  * @author Giancarlo
  */
-@Data
+@Getter
+@Setter
 @Entity
 public class Recipe {
 
