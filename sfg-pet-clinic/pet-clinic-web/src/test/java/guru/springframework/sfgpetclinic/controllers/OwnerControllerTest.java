@@ -1,5 +1,9 @@
 package guru.springframework.sfgpetclinic.controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.services.OwnerService;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,6 +14,7 @@ import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
@@ -110,7 +115,6 @@ public class OwnerControllerTest {
             .andExpect(model().attribute("owner", hasProperty("id", is(1l))));
   }
 
-  @Disabled
   @Test
   void initCreationForm() throws Exception {
     mockMvc.perform(get("/owners/new"))
@@ -121,12 +125,15 @@ public class OwnerControllerTest {
     verifyZeroInteractions(ownerService);
   }
 
-  @Disabled
   @Test
   void processCreationForm() throws Exception {
-    when(ownerService.save(ArgumentMatchers.any())).thenReturn(Owner.builder().id(1l).build());
+    Owner ownerToJson = Owner.builder().id(1l).build();
+    when(ownerService.save(ArgumentMatchers.any())).thenReturn(ownerToJson);
 
-    mockMvc.perform(post("/owners/new"))
+    mockMvc.perform(post("/owners/new")
+            .content(asJsonString(ownerToJson))
+            .contentType(MediaType.APPLICATION_JSON)
+            .accept(MediaType.APPLICATION_JSON))
             .andExpect(status().is3xxRedirection())
             .andExpect(view().name("redirect:/owners/1"))
             .andExpect(model().attributeExists("owner"));
@@ -134,7 +141,6 @@ public class OwnerControllerTest {
     verify(ownerService).save(ArgumentMatchers.any());
   }
 
-  @Disabled
   @Test
   void initUpdateOwnerForm() throws Exception {
     when(ownerService.findById(anyLong())).thenReturn(Owner.builder().id(1l).build());
@@ -147,10 +153,14 @@ public class OwnerControllerTest {
     verifyZeroInteractions(ownerService);
   }
 
-  @Disabled
   @Test
   void processUpdateOwnerForm() throws Exception {
-    when(ownerService.save(ArgumentMatchers.any())).thenReturn(Owner.builder().id(1l).build());
+    Owner ownerToJson = Owner.builder()
+            .id(1l)
+            .build();
+
+    when(ownerService.save(ArgumentMatchers.any()))
+            .thenReturn(ownerToJson);
 
     mockMvc.perform(post("/owners/1/edit"))
             .andExpect(status().is3xxRedirection())
@@ -158,5 +168,13 @@ public class OwnerControllerTest {
             .andExpect(model().attributeExists("owner"));
 
     verify(ownerService).save(ArgumentMatchers.any());
+  }
+
+  public static String asJsonString(final Object obj) {
+    try {
+      return new ObjectMapper().writeValueAsString(obj);
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
   }
 }
