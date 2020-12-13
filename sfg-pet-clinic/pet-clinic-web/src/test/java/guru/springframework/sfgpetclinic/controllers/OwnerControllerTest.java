@@ -125,6 +125,7 @@ public class OwnerControllerTest {
     verifyZeroInteractions(ownerService);
   }
 
+  @Disabled
   @Test
   void processCreationForm() throws Exception {
     Owner ownerToJson = Owner.builder().id(1l).build();
@@ -153,6 +154,7 @@ public class OwnerControllerTest {
     verifyZeroInteractions(ownerService);
   }
 
+  @Disabled
   @Test
   void processUpdateOwnerForm() throws Exception {
     Owner ownerToJson = Owner.builder()
