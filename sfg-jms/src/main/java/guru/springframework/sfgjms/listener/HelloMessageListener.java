@@ -39,8 +39,9 @@ public class HelloMessageListener {
 
   @JmsListener(destination = JmsConfig.MY_SEND_RCV_QUEUE)
   public void listenForHello(@Payload HelloWorldMessage helloWorldMessage,
-                     @Headers MessageHeaders messageHeaders,
-                     Message message) throws JMSException {
+                             @Headers MessageHeaders messageHeaders,
+                             Message message,
+                             org.springframework.messaging.Message springMessage) throws JMSException {
     HelloWorldMessage payloadMsg = HelloWorldMessage
             .builder()
             .id(UUID.randomUUID())
